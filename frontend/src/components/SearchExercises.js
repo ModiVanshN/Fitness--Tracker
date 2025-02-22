@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Box, Button, Stack, TextField, Typography } from '@mui/material';
-
+import Search from '../assets/images/explain.png';
 import { exerciseOptions, fetchData } from '../utils/fetchData';
 import HorizontalScrollbar from './HorizontalScrollbar';
 
@@ -38,6 +38,7 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
 
   return (
     <Stack alignItems="center" mt="37px" justifyContent="center" p="20px">
+      <img src={Search} alt="search" style={{ width: '100%', height: 'auto' }} />
       <Typography fontWeight={700} sx={{ fontSize: { lg: '44px', xs: '30px' } }} mb="49px" textAlign="center">
         Awesome Exercises You <br /> Should Know
       </Typography>
