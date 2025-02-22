@@ -1,37 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fitness Tracker Project</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        h1 {
-            color: #00698f;
-        }
-        h2 {
-            color: #008000;
-        }
-        ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        li {
-            margin-bottom: 10px;
-        }
-        a {
-            text-decoration: none;
-            color: #00698f;
-        }
-        a:hover {
-            color: #008000;
-        }
-    </style>
-</head>
+
 <body>
     <h1>Fitness Tracker Project</h1>
     <h2>Table of Contents</h2>
