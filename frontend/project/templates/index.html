@@ -1,0 +1,124 @@
+<!-- filepath: /c:/Users/Admin/OneDrive/Desktop/fitness tracker/hey/templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/posenet"></script>
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .video-container {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+            margin: 10px;
+        }
+        .progress-bar {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 20px;
+            background-color: #f3f3f3;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .progress-bar-inner {
+            height: 100%;
+            width: 0;
+            background-color: #4caf50;
+            transition: width 0.5s;
+        }
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        @media (max-width: 768px) {
+            .video-container img, .video-container video {
+                width: 100%;
+                height: auto;
+            }
+        }
+        @media (max-width: 480px) {
+            .video-container img, .video-container video {
+                width: 100%;
+                height: auto;
+            }
+            .controls {
+                flex-direction: column;
+                gap: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>REP COUNTER</h1>
+    <div class="container">
+        <div class="video-container">
+            <h2>Live Feed</h2>
+            <img src="{{ url_for('video_feed') }}" width="600" height="400">
+            <div class="progress-bar">
+                <div class="progress-bar-inner" id="progress-bar-inner"></div>
+            </div>
+        </div>
+        <div class="video-container">
+            <h2>Instructional Video</h2>
+            <video width="600" height="400" controls>
+                <source src="{{ url_for('static', filename='instruction.mp4') }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+    <div>
+        <h2>Reps Count: <span id="count">0</span></h2>
+    </div>
+    <div class="controls">
+        <button id="start-button" onclick="startCounting()">Start Counting</button>
+        <button id="stop-button" onclick="stopCounting()">Stop Counting</button>
+        <button id="reset-button" onclick="resetCount()">Reset Count</button>
+    </div>
+    <script>
+        function startCounting() {
+            fetch('/start_counting');
+        }
+
+        function stopCounting() {
+            fetch('/stop_counting');
+        }
+
+        function resetCount() {
+            fetch('/reset_count');
+        }
+
+        function fetchCount() {
+            fetch('/get_count')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('count').innerText = data.count;
+                    updateProgressBar(data.count);
+                });
+        }
+
+        function updateProgressBar(count) {
+            const progressBarInner = document.getElementById('progress-bar-inner');
+            const progress = (count % 10) * 10; // Assuming each rep is 10% of the progress bar
+            progressBarInner.style.width = progress + '%';
+        }
+
+        setInterval(fetchCount, 1000); // Fetch count every second
+    </script>
+</body>
+</html>
