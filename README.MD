@@ -54,7 +54,6 @@
         <li><code>mediapipe</code>: A machine learning library developed by Google.</li>
         <li><code>opencv-python</code>: A computer vision library.</li>
     </ul>
-https://github.com/ModiVanshN/Fitness--Tracker/blob/master/frontend/src/assets/images/Logo.png?raw=true
     <h2 id="troubleshooting">Troubleshooting</h2>
     <p>If you encounter any issues during the installation or running of the project, refer to the following troubleshooting steps:</p>
     <ul>
