@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <img src="	https://spng.pngfind.com/pngs/s/109-1091442_dumbbells-clipart-group-fitness-fitness-equipment-cliparts-png.png" width="150px" alt="Project Logo" />
+ <img src="https://spng.pngfind.com/pngs/s/109-1091442_dumbbells-clipart-group-fitness-fitness-equipment-cliparts-png.png" width="150px" alt="Project Logo" />
     <title>Fitness Tracker Project</title>
     <style>
         body {
