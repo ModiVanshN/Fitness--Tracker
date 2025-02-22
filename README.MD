@@ -47,6 +47,7 @@
         <li><code>mediapipe</code></li>
         <li><code>opencv-python</code></li>
     </ul>
+<img src="https://github.com/ModiVanshN/Fitness--Tracker/blob/master/frontend/src/assets/images/explain.png?raw=true" width="150px" alt="Project Logo" />
     <h2 id="dependencies">Dependencies</h2>
     <p>The project requires the following dependencies to be installed:</p>
     <ul>
