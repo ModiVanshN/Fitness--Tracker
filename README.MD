@@ -1,6 +1,6 @@
-https://github.com/ModiVanshN/Fitness--Tracker/blob/master/frontend/src/assets/images/Logo.png?raw=true
-<body>
 
+<body>
+     <img src="https://github.com/ModiVanshN/Fitness--Tracker/blob/master/frontend/src/assets/images/Logo.png?raw=true" width="150px" alt="Project Logo" />
     <h1>Fitness Tracker Project</h1>
     <h2>Table of Contents</h2>
     <ul>
